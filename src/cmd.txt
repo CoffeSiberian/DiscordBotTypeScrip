@@ -1,0 +1,3 @@
+npm install -D typescript
+
+npm run tsc -- --init
