@@ -31,11 +31,13 @@ export class GrupExample extends SlashCommandBuilder{
           .setDescription('Nada que ver'),
         execute:Function()
       };
-      
-      holaMundoCommand.execute = this.holamundo;
-      otrocmdCommand.execute = this.otrocmd; // agregamos la funcionalidad
 
-      this.commands.push(holaMundoCommand, otrocmdCommand); // agregamos los comandos
+      // agregamos la funcionalidad
+      holaMundoCommand.execute = this.holamundo;
+      otrocmdCommand.execute = this.otrocmd;
+
+      // agregamos los comandos
+      this.commands.push(holaMundoCommand, otrocmdCommand);
 
   };
 

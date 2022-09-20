@@ -3,7 +3,7 @@ import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import { Events_Bot } from './events';
 import { AllCommands } from './commands';
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] });
 const commands = new AllCommands(token, clientId);
 new Events_Bot(client); //agregamos los eventos
 client.commands = new Collection();

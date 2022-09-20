@@ -1,10 +1,15 @@
 import  { REST }    from '@discordjs/rest';
 import  { Routes }  from 'discord.js';
-import  { GrupExample } from './commands/grup_command';
 import  { createSubCommad } from './commands/type_sub_commands'
 
+import  { GrupExample } from './commands/grup_command';
+import { Musica } from './commands/musica';
+
 export class AllCommands {
+
     GrupExample: GrupExample = new GrupExample();
+    Musica: Musica = new Musica();
+    
     rest_api: REST = new REST({ version: '10' });
     clientId: string;
     commandsGrup: Array<any>;
@@ -17,7 +22,7 @@ export class AllCommands {
     };
 
     getAllJson(){
-        let GrupCommands = [this.GrupExample.toJSON()]; // Agregamos las clases instanciadas dentro de la lista
+        let GrupCommands = [this.GrupExample.toJSON(), this.Musica.toJSON()]; // Agregamos las clases instanciadas dentro de la lista
         GrupCommands.forEach(grupCommand => this.commandsGrup.push(grupCommand));
     };
 
